@@ -10,6 +10,9 @@
 
     <string name="name">Nome</string>
     <string name="address">Endereço</string>
+    <string name="ddd">DDD:</string>
+    <string name="doc">CPF:</string>
+    <string name="phone">Telefone:</string>
 
 
     <string name="save">Salvar</string>
@@ -20,5 +23,10 @@
     <string name="error_cpf">Favor Digitar o seu CPF</string>
     <string name="error_ddd">Favor Digitar o seu DDD</string>
     <string name="error_phone">Favor Digitar o seu Telefone</string>
+
+    <string name="salvando">Salvando</string>
+    <string name="atualizando">Atualizando</string>
+
+
 
 </resources>

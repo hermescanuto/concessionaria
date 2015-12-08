@@ -30,7 +30,6 @@
         android:singleLine="true"
         android:textSize="15sp" />
 
-
     <TextView
         android:id="@+id/label_email"
         android:layout_width="wrap_content"
@@ -58,15 +57,16 @@
         android:singleLine="true"
         android:textSize="15sp" />
 
-
     <TextView
         android:id="@+id/label_cpf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/user_cadastro_email"
         android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingStart="3dp"
         android:paddingTop="10dp"
-        android:text="CPF:"
+        android:text="@string/doc"
         android:textColor="#601313" />
 
     <EditText
@@ -79,10 +79,10 @@
         android:ems="15"
         android:hint=""
         android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:paddingStart="5dp"
         android:singleLine="true"
         android:textSize="15sp" />
-
 
     <TextView
         android:id="@+id/label_ddd"
@@ -92,7 +92,7 @@
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
         android:paddingTop="10dp"
-        android:text="DDD:"
+        android:text="@string/ddd"
         android:textColor="#601313" />
 
     <EditText
@@ -115,24 +115,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/label_ddd"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/label_ddd"
         android:layout_toRightOf="@+id/label_ddd"
         android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingStart="3dp"
         android:paddingTop="10dp"
-        android:text="Fone:"
-
+        android:text="@string/phone"
         android:textColor="#601313" />
-
 
     <EditText
         android:id="@+id/user_cadastro_fone"
         android:layout_width="56dp"
         android:layout_height="@dimen/textview_height"
         android:layout_alignBaseline="@+id/user_cadastro_ddd"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/user_cadastro_ddd"
         android:layout_toRightOf="@+id/user_cadastro_ddd"
         android:background="@drawable/edittextstyle"
         android:ems="15"
@@ -145,7 +151,6 @@
         android:textSize="15sp" />
 
     <Button
-
         android:id="@+id/bt_fechar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
