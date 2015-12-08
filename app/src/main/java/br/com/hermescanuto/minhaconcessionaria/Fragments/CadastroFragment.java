@@ -58,7 +58,7 @@ public class CadastroFragment extends Fragment {
         } else {
             setCadastro();
         }
-
+  
 
         Button bt_salvar = (Button) cadastro.findViewById(R.id.bt_fechar);
         bt_salvar.setOnClickListener(new View.OnClickListener() {
