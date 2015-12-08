@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="app_name">Vigo SBC</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="concessionara_name">SÃO BERNARDO DO CAMPO</string>
+
+
+    <string name="name">Nome</string>
+    <string name="address">Endereço</string>
+
+
+    <string name="save">Salvar</string>
+    <string name="email">Email</string>
+
+    <string name="error_name">Favor Digitar o seu nome</string>
+    <string name="error_email">Favor Digitar o seu Email</string>
+    <string name="error_cpf">Favor Digitar o seu CPF</string>
+    <string name="error_ddd">Favor Digitar o seu DDD</string>
+    <string name="error_phone">Favor Digitar o seu Telefone</string>
+
+</resources>

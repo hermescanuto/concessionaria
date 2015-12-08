@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <TextView
+        android:id="@+id/label_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="3dp"
+        android:paddingLeft="3dp"
+        android:paddingStart="3dp"
+        android:text="@string/name"
+        android:textColor="#601313" />
+
+    <EditText
+        android:id="@+id/user_cadastro_nome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textview_height"
+        android:layout_below="@+id/label_nome"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="15"
+        android:hint=""
+        android:inputType="textCapWords"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/label_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_cadastro_nome"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="10dp"
+        android:text="@string/email"
+        android:textColor="#601313" />
+
+    <EditText
+        android:id="@+id/user_cadastro_email"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textview_height"
+        android:layout_below="@+id/label_email"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="15"
+        android:hint=""
+        android:inputType="textEmailAddress"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/label_cpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_cadastro_email"
+        android:paddingLeft="3dp"
+        android:paddingTop="10dp"
+        android:text="CPF:"
+        android:textColor="#601313" />
+
+    <EditText
+        android:id="@+id/user_cadastro_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textview_height"
+        android:layout_below="@+id/label_cpf"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="15"
+        android:hint=""
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/label_ddd"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_cadastro_cpf"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="10dp"
+        android:text="DDD:"
+        android:textColor="#601313" />
+
+    <EditText
+        android:id="@+id/user_cadastro_ddd"
+        android:layout_width="56dp"
+        android:layout_height="@dimen/textview_height"
+        android:layout_below="@+id/label_ddd"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="15"
+        android:hint=""
+        android:inputType="numberSigned"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/label_Fone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/label_ddd"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/label_ddd"
+        android:paddingLeft="3dp"
+        android:paddingTop="10dp"
+        android:text="Fone:"
+
+        android:textColor="#601313" />
+
+
+    <EditText
+        android:id="@+id/user_cadastro_fone"
+        android:layout_width="56dp"
+        android:layout_height="@dimen/textview_height"
+        android:layout_alignBaseline="@+id/user_cadastro_ddd"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/user_cadastro_ddd"
+        android:background="@drawable/edittextstyle"
+        android:ems="15"
+        android:hint=""
+        android:inputType="phone"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+    <Button
+
+        android:id="@+id/bt_fechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_cadastro_ddd"
+        android:layout_marginTop="15dp"
+        android:text="@string/save" />
+
+</RelativeLayout>
