@@ -24,23 +24,31 @@ import butterknife.ButterKnife;
 
 public class CadastroFragment extends Fragment {
 
-    @Bind(R.id.user_cadastro_nome) TextView nome;
-    @Bind(R.id.user_cadastro_email) TextView email;
-    @Bind(R.id.user_cadastro_ddd) TextView ddd;
-    @Bind(R.id.user_cadastro_fone) TextView telefone;
-    @Bind(R.id.user_cadastro_cpf) TextView cpf;
+    @Bind(R.id.user_cadastro_nome)
+    TextView nome;
+    @Bind(R.id.user_cadastro_email)
+    TextView email;
+    @Bind(R.id.user_cadastro_ddd)
+    TextView ddd;
+    @Bind(R.id.user_cadastro_fone)
+    TextView telefone;
+    @Bind(R.id.user_cadastro_cpf)
+    TextView cpf;
 
 
-  //  private EditText nome;
-  //   private EditText email;
-  //  private EditText ddd;
-  //  private EditText telefone;
-  //   private EditText cpf;
+    //  private EditText nome;
+    //   private EditText email;
+    //  private EditText ddd;
+    //  private EditText telefone;
+    //   private EditText cpf;
 
     private long id;
 
     private View cadastro;
 
+    public final static boolean isValidEmail(CharSequence target) {
+        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
 
     @Nullable
     @Override
@@ -59,12 +67,10 @@ public class CadastroFragment extends Fragment {
             setCadastro();
         }
 
-
         Button bt_salvar = (Button) cadastro.findViewById(R.id.bt_fechar);
         bt_salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 if (temErro() == false) {
 
@@ -76,23 +82,11 @@ public class CadastroFragment extends Fragment {
                     FragmentManager fm = getFragmentManager();
                     fm.popBackStack();
                 }
-
-
             }
         });
 
         Log.i("Car", "Fragmento");
-
         return cadastro;
-
-    }
-
-    public void getCadastro() {
-        nome = (EditText) cadastro.findViewById(R.id.user_cadastro_nome);
-        email = (EditText) cadastro.findViewById(R.id.user_cadastro_email);
-        ddd = (EditText) cadastro.findViewById(R.id.user_cadastro_ddd);
-        telefone = (EditText) cadastro.findViewById(R.id.user_cadastro_fone);
-        cpf = (EditText) cadastro.findViewById(R.id.user_cadastro_cpf);
     }
 
     public void setCadastro() {
@@ -112,7 +106,7 @@ public class CadastroFragment extends Fragment {
 
         Cliente cliente = (id == 0) ? new Cliente() : Cliente.findById(Cliente.class, id);
 
-        String msg =  (id == 0) ? "Salvando" :  "Atualizando";
+        String msg = (id == 0) ? getResources().getString(R.string.salvando) : getResources().getString(R.string.atualizando);
 
         cliente.setNome(nome.getText().toString());
         cliente.setEmail(email.getText().toString());
@@ -121,10 +115,9 @@ public class CadastroFragment extends Fragment {
         cliente.setCpf(cpf.getText().toString());
         cliente.save();
 
-        Toast.makeText( getContext() , msg , Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 
     }
-
 
     public boolean temErro() {
 
@@ -133,7 +126,7 @@ public class CadastroFragment extends Fragment {
             return true;
         }
 
-        if ( !isValidEmail( email.getText().toString() ) ) {
+        if (!isValidEmail(email.getText().toString())) {
             email.setError(getResources().getString(R.string.error_email));
             return true;
         }
@@ -154,9 +147,5 @@ public class CadastroFragment extends Fragment {
         }
 
         return false;
-    }
-
-    public final static boolean isValidEmail(CharSequence target) {
-        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 }
