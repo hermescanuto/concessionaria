@@ -9,21 +9,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.List;
-
-import br.com.hermescanuto.minhaconcessionaria.Data.Automovel;
 import br.com.hermescanuto.minhaconcessionaria.Data.Cliente;
 import br.com.hermescanuto.minhaconcessionaria.Fragments.CadastroFragment;
 import br.com.hermescanuto.minhaconcessionaria.R;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Cliente cliente;
-    private List<Automovel> listaDeAutomoveis;
-    private TextView subtexto;
+
+    @Bind(R.id.toolbar_subtitle)
+    TextView subtexto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setLogo(R.drawable.ic_menu_ic_vigo);
-
         setSupportActionBar(toolbar);
 
-        subtexto = (TextView) toolbar.findViewById(R.id.toolbar_subtitle);
+        ButterKnife.bind(this, toolbar);
 
-
-        cliente = new Cliente();
+        Cliente cliente = new Cliente();
         String nome = cliente.getCliente().getNome();
         subtexto.setText( nome );
 
@@ -71,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 transaction.commit();
 
             }
-
             return true;
         }
 

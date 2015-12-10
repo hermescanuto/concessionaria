@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +23,8 @@ import butterknife.ButterKnife;
 
 public class CadastroFragment extends Fragment {
 
+    private long id;
+
     @Bind(R.id.user_cadastro_nome)
     TextView nome;
     @Bind(R.id.user_cadastro_email)
@@ -36,25 +37,11 @@ public class CadastroFragment extends Fragment {
     TextView cpf;
 
 
-    //  private EditText nome;
-    //   private EditText email;
-    //  private EditText ddd;
-    //  private EditText telefone;
-    //   private EditText cpf;
-
-    private long id;
-
-    private View cadastro;
-
-    public final static boolean isValidEmail(CharSequence target) {
-        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        cadastro = inflater.inflate(R.layout.fragment_cadastro, container, false);
+        View cadastro = inflater.inflate(R.layout.fragment_cadastro, container, false);
         //getCadastro();
 
         ButterKnife.bind(this, cadastro);
@@ -72,7 +59,7 @@ public class CadastroFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (temErro() == false) {
+                if (!temErro()) {
 
                     salvaCadastro();
 
@@ -104,19 +91,18 @@ public class CadastroFragment extends Fragment {
 
     public void salvaCadastro() {
 
-        Cliente cliente = (id == 0) ? new Cliente() : Cliente.findById(Cliente.class, id);
-
         String msg = (id == 0) ? getResources().getString(R.string.salvando) : getResources().getString(R.string.atualizando);
 
+        Cliente cliente = (id == 0) ? new Cliente() : Cliente.findById(Cliente.class, id);
         cliente.setNome(nome.getText().toString());
         cliente.setEmail(email.getText().toString());
         cliente.setDdd(ddd.getText().toString());
         cliente.setTelefone(telefone.getText().toString());
         cliente.setCpf(cpf.getText().toString());
+
         cliente.save();
 
         Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
-
     }
 
     public boolean temErro() {
@@ -147,5 +133,10 @@ public class CadastroFragment extends Fragment {
         }
 
         return false;
+    }
+
+
+    public boolean isValidEmail(CharSequence target) {
+        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 }

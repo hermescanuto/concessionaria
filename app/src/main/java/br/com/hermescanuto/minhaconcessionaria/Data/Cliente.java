@@ -1,16 +1,9 @@
 package br.com.hermescanuto.minhaconcessionaria.Data;
 
-import android.content.Context;
-
 import com.orm.SugarRecord;
-
-import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by herme on 27/11/2015.
- */
-public class Cliente extends SugarRecord<Cliente> implements Serializable {
+public class Cliente extends SugarRecord<Cliente>  {
 
     private String nome;
     private String ddd;
@@ -19,15 +12,16 @@ public class Cliente extends SugarRecord<Cliente> implements Serializable {
     private String cpf;
 
 
-    public Cliente(){}
-
-    public Cliente(String nome, String ddd, String telefone, String email , String cpf){
-        this.nome = nome;
-        this.ddd = ddd;
-        this.telefone = telefone;
-        this.email = email;
-        this.cpf = cpf;
+    public Cliente() {
     }
+
+    //  public Cliente(String nome, String ddd, String telefone, String email, String cpf) {
+    //      this.nome = nome;
+    //      this.ddd = ddd;
+    //      this.telefone = telefone;
+    //      this.email = email;
+    //     this.cpf = cpf;
+    //  }
 
 
     public String getNome() {
@@ -70,23 +64,22 @@ public class Cliente extends SugarRecord<Cliente> implements Serializable {
         this.cpf = cpf;
     }
 
-    public Cliente getCliente(){
+    public Cliente getCliente() {
 
         long numeroDeClientes = Cliente.count(Cliente.class, null, null);
 
         Cliente c = new Cliente();
 
-        if ( numeroDeClientes != 0 ){
+        if (numeroDeClientes != 0) {
             List<Cliente> clientes = Cliente.listAll(Cliente.class);
 
             c.setNome(clientes.get(0).getNome());
             c.setEmail(clientes.get(0).getEmail());
             c.setCpf(clientes.get(0).getCpf());
             c.setDdd(clientes.get(0).getDdd());
-            c.setTelefone(clientes.get(0).getTelefone());        }
-
+            c.setTelefone(clientes.get(0).getTelefone());
+        }
         return c;
     }
-
 
 }
