@@ -1,6 +1,8 @@
 package br.com.hermescanuto.minhaconcessionaria.Data;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
+
 import java.util.List;
 
 public class Cliente extends SugarRecord<Cliente>  {
@@ -11,18 +13,11 @@ public class Cliente extends SugarRecord<Cliente>  {
     private String email;
     private String cpf;
 
+    @Ignore
+    public long clienteID;
 
-    public Cliente() {
-    }
 
-    //  public Cliente(String nome, String ddd, String telefone, String email, String cpf) {
-    //      this.nome = nome;
-    //      this.ddd = ddd;
-    //      this.telefone = telefone;
-    //      this.email = email;
-    //     this.cpf = cpf;
-    //  }
-
+    public Cliente() {}
 
     public String getNome() {
         return nome;
@@ -64,6 +59,10 @@ public class Cliente extends SugarRecord<Cliente>  {
         this.cpf = cpf;
     }
 
+    public long  getClienteId(){
+        return this.clienteID;
+    }
+
     public Cliente getCliente() {
 
         long numeroDeClientes = Cliente.count(Cliente.class, null, null);
@@ -78,6 +77,7 @@ public class Cliente extends SugarRecord<Cliente>  {
             c.setCpf(clientes.get(0).getCpf());
             c.setDdd(clientes.get(0).getDdd());
             c.setTelefone(clientes.get(0).getTelefone());
+            this.clienteID = clientes.get(0).id ;
         }
         return c;
     }

@@ -1,39 +1,37 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.MainActivity">
 
-
     <item
-    android:id="@+id/menu_seu_cadastro"
-    android:icon="@drawable/ic_menu_ic_cadastro"
-    android:title="Seu Cadastro" />
-
-    <item
-        android:id="@+id/menu_seu_carro"
+        android:id="@+id/menu_seu_cadastro_cliente"
         android:icon="@drawable/ic_menu_ic_cadastro"
-        android:title="Seu Carro" />
+        android:title="@string/menu_seu_cadastro" />
 
     <item
-    android:id="@+id/menu_pos_vendas"
-    android:title="Pós Vendas" />
+        android:id="@+id/menu_seu_cadastro_cliente_carro"
+        android:icon="@drawable/ic_menu_ic_cadastro"
+        android:title="@string/menu_seu_carro" />
+
+    <item
+        android:id="@+id/menu_pos_vendas"
+        android:title="@string/menu_pos_vendas" />
 
     <item
         android:id="@+id/menu_vendas"
-        android:title="Vendas" />
+        android:title="@string/menu_vendas" />
 
 
     <item
         android:id="@+id/menu_alertas"
-        android:title="Alertas" />
+        android:title="@string/menu_alertas" />
 
 
     <item
         android:id="@+id/menu_fale_conosco"
-        android:title="Fale Conosco" />
+        android:title="@string/menu_fale_conosco" />
 
     <item
         android:id="@+id/menu_lojas"
-        android:title="Lojas" />
+        android:title="@string/menu_lojas" />
 
 </menu>

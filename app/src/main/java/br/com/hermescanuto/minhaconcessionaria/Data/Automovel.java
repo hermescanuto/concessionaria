@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by herme on 27/11/2015.
  */
-public class Automovel extends SugarRecord<Automovel>  implements Serializable {
+public class Automovel extends SugarRecord<Automovel>   {
 
     private int  anoFabricacao;
     private int  anoModelo;

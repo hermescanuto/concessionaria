@@ -27,6 +27,16 @@
     <string name="salvando">Salvando</string>
     <string name="atualizando">Atualizando</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <!-- TODO: Menu principal -->
+    <string name="menu_seu_cadastro">Seu Cadastro</string>
+    <string name="menu_seu_carro">Seu Carro</string>
+    <string name="menu_pos_vendas">Pós Vendas</string>
+    <string name="menu_vendas">Vendas</string>
+    <string name="menu_alertas">Alertas</string>
+    <string name="menu_fale_conosco">Fale Conosco</string>
+    <string name="menu_lojas">Lojas</string>
 </resources>

@@ -21,9 +21,7 @@ import br.com.hermescanuto.minhaconcessionaria.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CadastroFragment extends Fragment {
-
-    private long id;
+public class CadastroClienteFragment extends Fragment {
 
     @Bind(R.id.user_cadastro_nome)
     TextView nome;
@@ -35,13 +33,13 @@ public class CadastroFragment extends Fragment {
     TextView telefone;
     @Bind(R.id.user_cadastro_cpf)
     TextView cpf;
-
+    private long id;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View cadastro = inflater.inflate(R.layout.fragment_cadastro, container, false);
+        View cadastro = inflater.inflate(R.layout.fragment_cadastro_cliente, container, false);
         //getCadastro();
 
         ButterKnife.bind(this, cadastro);
@@ -67,7 +65,7 @@ public class CadastroFragment extends Fragment {
                     mf.setSubtexto(nome.getText().toString());
 
                     FragmentManager fm = getFragmentManager();
-                    fm.popBackStack();
+                    fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 }
             }
         });
