@@ -8,7 +8,7 @@
     <string name="concessionara_name">SÃO BERNARDO DO CAMPO</string>
 
 
-    <string name="name">Nome</string>
+    <string name="name">Nome:</string>
     <string name="address">Endereço</string>
     <string name="ddd">DDD:</string>
     <string name="doc">CPF:</string>
@@ -16,7 +16,7 @@
 
 
     <string name="save">Salvar</string>
-    <string name="email">Email</string>
+    <string name="email">Email:</string>
 
     <string name="error_name">Favor Digitar o seu nome</string>
     <string name="error_email">Favor Digitar o seu Email</string>
@@ -30,8 +30,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
-    <!-- TODO: Menu principal -->
     <string name="menu_seu_cadastro">Seu Cadastro</string>
     <string name="menu_seu_carro">Seu Carro</string>
     <string name="menu_pos_vendas">Pós Vendas</string>
@@ -39,4 +37,67 @@
     <string name="menu_alertas">Alertas</string>
     <string name="menu_fale_conosco">Fale Conosco</string>
     <string name="menu_lojas">Lojas</string>
+
+
+    <string name="modelo">Modelo:</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>

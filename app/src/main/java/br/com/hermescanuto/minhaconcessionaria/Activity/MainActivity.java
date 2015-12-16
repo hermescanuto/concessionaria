@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.hermescanuto.minhaconcessionaria.Data.Cliente;
+import br.com.hermescanuto.minhaconcessionaria.Fragments.CadastroAutomovelFragment;
 import br.com.hermescanuto.minhaconcessionaria.Fragments.CadastroClienteFragment;
 import br.com.hermescanuto.minhaconcessionaria.R;
 import butterknife.Bind;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         if (frag == null) {
             deleteAllFragments();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.alvo_view, new CadastroClienteFragment(), tag);
+            transaction.replace(R.id.alvo_view, new CadastroAutomovelFragment(), tag);
             transaction.addToBackStack(null);
             transaction.commit();
         }
