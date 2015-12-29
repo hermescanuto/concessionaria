@@ -10,7 +10,7 @@
         android:paddingEnd="3dp"
         android:paddingLeft="3dp"
         android:paddingStart="3dp"
-        android:text="Modelo"
+        android:text="@string/modelo"
         android:textColor="#601313" />
 
     <Spinner
@@ -29,5 +29,13 @@
         android:singleLine="true"
         android:textSize="15sp" />
 
+
+    <Button
+        android:id="@+id/bt_fechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadastro_automovel_modelo"
+        android:layout_marginTop="15dp"
+        android:text="@string/save" />
 
 </RelativeLayout>

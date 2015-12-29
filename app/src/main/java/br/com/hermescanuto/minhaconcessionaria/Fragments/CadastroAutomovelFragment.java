@@ -5,7 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +23,10 @@ import butterknife.ButterKnife;
 public class CadastroAutomovelFragment extends Fragment {
 
     @Bind(R.id.cadastro_automovel_modelo)
-    Spinner placa;
+    Spinner modelo;
+
+    @Bind(R.id.bt_fechar)
+    Button botao;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,20 +37,21 @@ public class CadastroAutomovelFragment extends Fragment {
 
         String[] au = getResources().getStringArray(R.array.planets_array);
 
-        List<String> automoveis = new ArrayList<String>(Arrays.asList(au));
+        List<String> automoveis = new ArrayList<>(Arrays.asList(au));
 
-        int layout = android.R.layout.simple_spinner_item;
+        ListaAutomoveisAdapter adapter = new ListaAutomoveisAdapter(getContext(), automoveis);
 
-        //   ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), layout, automoveis );
-
-        //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // ListaAutomoveisAdapter adapter  = new ListaAutomoveisAdapter( getContext(), automoveis );
-
-        ListaAutomoveisAdapter adapter = new ListaAutomoveisAdapter(getContext(), automoveis, getActivity());
+        modelo.setAdapter(adapter);
 
 
-        placa.setAdapter(adapter);
+
+        botao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = (String) modelo.getSelectedItem();
+                Toast.makeText(getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+            }
+        });
 
         return cadastro;
     }
